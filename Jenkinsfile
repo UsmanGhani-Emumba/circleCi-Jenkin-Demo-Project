@@ -1,6 +1,9 @@
 
 pipeline {
     agent any
+
+     tools {nodejs "node"}
+
     stages {
         stage ("build"){
             steps {
@@ -14,7 +17,7 @@ pipeline {
         }
         stage("run"){
             steps {
-                node main.js
+                sh 'node main'
             }
         }
     }
