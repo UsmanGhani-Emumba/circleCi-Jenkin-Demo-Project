@@ -17,7 +17,7 @@ pipeline {
         }
         stage("run"){
             steps {
-                node main
+                sh 'node main.js'
             }
         }
     }
