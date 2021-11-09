@@ -1,15 +1,15 @@
 
 pipeline {
-    agent {label "windows"}
+    agent any
     stages {
         stage("build"){
             steps {
-                echo "My first demo project"
+                echo "building the application"
             }
         }
         stage("test"){
             steps {
-                npm run main.js
+              echo "testing the application"
             }
         }
     }
