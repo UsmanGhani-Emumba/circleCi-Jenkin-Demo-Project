@@ -1,3 +1,4 @@
+
 node('docker'){
       checkout scm {
           staged ('Build'){
