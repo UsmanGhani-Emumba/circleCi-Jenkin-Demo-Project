@@ -25,6 +25,7 @@ jobs:
           username: usmanghaniemumba23
           password: 5sb-gwW=R2t#9bV
     steps:
+      - checkout
       - run:
           command: node main
 workflows:
