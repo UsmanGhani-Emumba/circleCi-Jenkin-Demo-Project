@@ -9,5 +9,10 @@ pipeline {
                 """
             }
         }
+        stage("test"){
+            steps {
+                npm run main.js
+            }
+        }
     }
 }
