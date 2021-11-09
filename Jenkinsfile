@@ -1,21 +1,9 @@
 
-pipeline {
-    agent {
-        docker {
-            image 'node:6-alpine'
-            args '-p 3000:3000'
+node{
+    checkout scm
+    stage('Build') {
+        docker.image('node:14-alpine').inside('circleCi-Jenkin-Demo-Project') {
+            sh 'npm --version'
         }
-    }
-    stages {
-        stage('Build') {
-            steps {
-                  echo 'building the applications'
-            }
-        }
-        stage('Test') {
-                    steps {
-                        echo 'testing the applications'
-                    }
-                }
     }
 }
