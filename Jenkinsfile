@@ -1,16 +1,9 @@
 
-pipeline {
-    agent any
-    stages {
-        stage("build"){
-            steps {
-                echo "building the application"
-            }
-        }
-        stage("test"){
-            steps {
-              echo "testing the application"
-            }
+node('docker') {
+    checkout scm
+    stage('Build') {
+        docker.image('node:14-alpine').inside {
+            sh 'npm --version'
         }
     }
 }
