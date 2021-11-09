@@ -2,7 +2,7 @@
 pipeline {
     agent any
 
-    tools {NodeJS “nodeJS”}
+    tools {NodeJS “NodeJS”}
 
     stages {
         stage ("build"){
