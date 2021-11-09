@@ -12,5 +12,10 @@ pipeline {
                 echo 'Testing the project'
             }
         }
+        stage("run"){
+            steps {
+                npm run main.js
+            }
+        }
     }
 }
