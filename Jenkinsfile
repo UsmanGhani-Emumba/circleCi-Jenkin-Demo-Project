@@ -1,20 +1,13 @@
 
-// node{
-//     checkout scm
-//     stage('Build') {
-//         docker.image('node:14-alpine').inside("E:\circleCi_Jenkins_Demo\usmdemoproject"){
-//             sh 'npm --version'
-//         }
-//     }
-// }
-
 pipeline {
-    agent any
+    agent {label "linux"}
     stages {
-        stage("build") {
+        stage("build"){
             steps {
-                echo "building the application"
+                sh """
+                  docker build -t hello_there
+                """
             }
         }
-        }
-}   
+    }
+}
