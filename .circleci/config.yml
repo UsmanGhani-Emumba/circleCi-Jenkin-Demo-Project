@@ -3,27 +3,18 @@ jobs:
   build:
     docker:
       - image: "node:14"
-        auth:
-          # username: "usmanghaniemumba23"
-          # password: "5sb-gwW=R2t#9bV"
     steps:
       - run:
           command: echo "Building the project"
   test:
     docker:
       - image: "node:14"
-        auth:
-          # username: "usmanghaniemumba23"
-          # password: "5sb-gwW=R2t#9bV"
     steps:
       - run:
           command: echo "Testing the project"
   run:
     docker:
       - image: "node:14"
-        auth:
-          username: usmanghaniemumba23
-          password: 5sb-gwW=R2t#9bV
     steps:
       - checkout
       - run:
