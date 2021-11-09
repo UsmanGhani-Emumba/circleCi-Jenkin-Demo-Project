@@ -14,7 +14,7 @@ pipeline {
         }
         stage("run"){
             steps {
-                npm run main.js
+                node main.js
             }
         }
     }
