@@ -17,7 +17,7 @@ pipeline {
         }
         stage("run"){
             steps {
-                sh 'node main'
+                node main
             }
         }
     }
