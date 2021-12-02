@@ -1,13 +1,21 @@
 
+def checkOs(){
+    if (isUnix()) {
+      echo 'not windows'
+    }
+    else {
+        echo 'windows'
+    }
+}
 pipeline {
     agent any
     stages {
-        stage ("build"){
+        stage("build"){
             steps {
                 echo 'Building the project'
             }
         }
-        stage ("test"){
+        stage("test"){
             steps {
                 echo 'Testing the project'
             }
@@ -15,6 +23,11 @@ pipeline {
         stage("run"){
             steps {
                 sh 'node main'
+            }
+        }
+        stage("check os"){
+            steps{
+                checkOs()
             }
         }
     }
