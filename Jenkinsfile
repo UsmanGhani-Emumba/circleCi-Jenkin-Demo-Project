@@ -1,10 +1,10 @@
 
 def checkOs(){
     if (isUnix()) {
-      echo 'not windows'
+      sh 'npm run main'
     }
     else {
-        echo 'windows'
+        sh 'npm run test'
     }
 }
 pipeline {
@@ -18,11 +18,6 @@ pipeline {
         stage("test"){
             steps {
                 echo 'Testing the project'
-            }
-        }
-        stage("run"){
-            steps {
-                sh 'node main'
             }
         }
         stage("check os"){
