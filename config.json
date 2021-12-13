@@ -1,0 +1,14 @@
+{
+  "qa": {
+    "username": null,
+    "password": null
+  },
+  "uat": {
+    "username": null,
+    "password": null
+  },
+  "perf": {
+    "username": null,
+    "password": null
+  }
+}

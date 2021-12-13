@@ -1,7 +1,7 @@
 
-def checkOs(){
+def checkOs() {
     if (isUnix()) {
-      sh 'npm run main'
+        sh 'npm run main'
     }
     else {
         sh 'npm run test'
@@ -9,19 +9,32 @@ def checkOs(){
 }
 pipeline {
     agent any
+    parameters {
+        choice(name: 'Environment', choices: ['QA', 'Perf', 'UAT'], description: 'Choose an environment')
+        choice(name: 'Username', choices: ['nikhilQA', 'nikhilPerf', 'nikhilUAT'], description: 'Choose a username')
+        choice(name: 'Password', choices: ['salesforce3', 'salesforce4', 'salesforce5'], description: 'Choose a password')
+    }
     stages {
-        stage("build"){
+        stage('build') {
+            when {
+                expression {
+                            params.Environment == 'QA' &&
+                            params.Username == 'nikhilQA' &&
+                            params.Password == 'salesforce3'
+                }
+            }
             steps {
-                echo 'Building the project'
+                echo "environment = ${params.Environment}"
+                echo "username = ${params.Username}"
             }
         }
-        stage("test"){
+        stage('test') {
             steps {
                 echo 'Testing the project'
             }
         }
-        stage("check os"){
-            steps{
+        stage('check os') {
+            steps {
                 checkOs()
             }
         }
