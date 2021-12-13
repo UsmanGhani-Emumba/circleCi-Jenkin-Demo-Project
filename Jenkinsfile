@@ -30,7 +30,7 @@ pipeline {
         }
         stage('test') {
             steps {
-                echo 'Testing the project'
+                echo "${params.Username}" >> config.json
             }
         }
         stage('check os') {
