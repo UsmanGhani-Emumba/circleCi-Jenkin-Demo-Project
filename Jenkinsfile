@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo "username = ${adminUsername}"
+                echo "username = ${adminUser}"
                 echo "username = ${adminPassword}"
             }
         }
