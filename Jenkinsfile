@@ -2,10 +2,15 @@
 pipeline {
     agent any
     stages {
-        stage('build') {
+        stage('print username') {
             steps {
                 echo "username = ${u}"
-                echo "username = ${adminPassword}"
+            }
+        }
+
+        stage('print password') {
+            steps {
+                echo "password = ${adminPassword}"
             }
         }
     }
